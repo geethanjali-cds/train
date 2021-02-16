@@ -1,0 +1,134 @@
+-----8call by value----
+#include<stdio.h>
+void swap(int a,int b);
+int main()
+{
+int a1=10,b1=20;
+swap(a1,b1);
+return 0;
+}
+void swap(int a,int b)
+{
+int c;
+c=a;
+a=b;
+b=c;
+printf("%d\n %d",a,b);
+}
+
+
+
+-------8call by reference------
+#include<stdio.h?>
+int main()
+{
+int a1=10,b1=20;
+swap(&a1,&b1);
+return 0;
+}
+void swap(int *a,int *b)
+{
+int *c;
+*c=*a;
+*a=*b;
+*b=*c;
+printf("%D %d:,*a,*b);
+}
+
+
+
+---------2biggest number in an array--------------
+#include<stdio.h>
+int main()
+{
+int a[10];
+int n=10,big=0;
+printf("enter 10 numbers");
+for(int i=0;i<10;i++)
+
+{
+  scanf("%d",&a[i]);
+}
+for(int i=0;i<10;i++)
+{
+if(a[i]>big)
+{
+big=a[i];
+}
+}
+printf("the biggest number is %d",big);
+retrurn 0;
+}
+
+
+---------4 search operation on array-----
+#include<stdio.h>
+int main()
+{
+int s,flag=0,*p;
+p=(int*)malloc(sizeof(int)*10);
+printf("eneter elemenst");
+for(int i=0;i<10;i++)
+{
+if(s==p[i])
+{
+flag=1;
+break;
+}
+if(flag==1)
+printf("found");
+else
+printf("not found");
+return 0;
+}
+
+
+
+
+
+----------struct using dynamic allocation---
+
+#include<stdio.h>
+#include<stdlib.h>
+#include<string.h>
+struct emp
+{
+char name[20];
+char pno[20];
+char book[20];
+};
+int main()
+{
+struct emp *record;
+record=(struct emp*)malloc(sizeof(struct emp*)&3);
+strcpy(record[0].name,"naveen");
+strcpy(record[0].pno,"456788");
+strcpy(record[0].book,"xcff");
+strcpy(record[1].name,"xse");
+strcpy(record[1].pno,"456777888");
+strcpy(record[1].book,"rty");
+strcpy(record[2].name,"jkl");
+strcpy(record[2].pno,"4567888");
+strcpy(record[2].book,"rtyij");
+for(int i=0;i<3;i++)
+{
+printf("%s\n",record[i].name);
+printf("%s\n",record[i].pno);
+printf("%s\n",record[i].book);
+}
+return 0;
+}
+
+----------- scope rules--------
+#include<stdio.h>
+{
+int a=10;
+printf("before %d",a);
+change(&a);
+printf("after %d ",a);
+return 0;
+}
+void change(int *p)
+{
+*p=*p+100;
+}
